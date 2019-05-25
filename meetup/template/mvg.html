@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        body {
+            background: #dddddd;
+            font-family: Arial;
+        }
+        table {
+            border-collapse: separate;
+            border-spacing: 0.2em;
+        }
+        th,td {
+            padding: 0.2em 0.5em;
+            border-radius: 0.1em;
+        }
+        thead th {
+            background-color: #ffebe6;
+            color: #c32e04;
+        }
+        td {
+          box-shadow: inset 1px 3px 5px -3px rgba(0,0,0,0.5);
+        }
+        td:empty {
+            box-shadow: none;
+        }
+    </style>
+</head>
+<body>
+
+<h1>MVG Abfahrtszeiten</h1>
+
+<table>
+{% for record in data %}
+<tr>
+    <td bgcolor="{{ record['color'] }}" align="center">{{ record["label"] }}</td>
+    <td>{{ record["walk"].strftime("%H:%M") }}</td>
+    <td>&rArr;{{ record["name"] }}</td>
+    <td>&rArr;{{ record["departure"].strftime("%H:%M") }}</td>
+    <td>
+        {% if record["product"] != "UBAHN" %}
+            {{ record["product"] }}
+        {% end if %}
+        {{ record["label"] }}{{ record["destination"] }}
+    </td>
+</tr>
+{% end for %}
+</table>
+
+</body>
+</html>

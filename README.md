@@ -1,4 +1,5 @@
 meetup
 ======
 
-Meetup Demo Project
+Meetup Demo Project.
+
