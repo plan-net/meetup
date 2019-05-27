@@ -1,7 +1,7 @@
 meetup
 ======
 
-Meetup Demo Project.
+This repository hosts the core4os meetup presentation and its demo project.
 
 Ensure you meet the core4os prerequisites as described in
 https://core4os.readthedocs.io/en/latest/install/prereq.html.
